@@ -8,7 +8,45 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <GridView Name="mylist" ItemsSource="{x:Bind MusicList}" SelectionChanged="GridView_SelectionChanged">
 
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Tapped="StackPanel_Tapped" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding FileName}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Artist}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Album}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Duration}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding FileName}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding AlbumCover}"/>
+                        </StackPanel>
+                        <MediaElement x:Name="Player" 
+                    
+                    Width="100"
+                    AutoPlay="true"
+                                            
+                    AreTransportControlsEnabled="True"/>
+                      
+                    </StackPanel>
+
+                </DataTemplate>
+                
+            </GridView.ItemTemplate>
+            
+
+        </GridView>
+       
     </Grid>
 </Page>
